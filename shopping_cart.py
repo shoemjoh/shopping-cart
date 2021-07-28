@@ -67,8 +67,10 @@ selected_id = input("Please input a product identifier: ")
 
 for i in products:
     if selected_id == str(i["id"]):
-        matching_prod = i["name"]
-        print(matching_prod)
+        matching_prods = i
+        # print(matching_prods)
+        print("Selected Product: " +
+              matching_prods["name"] + " " + to_usd(matching_prods["price"]))
 
 
 # print(selected_id)
