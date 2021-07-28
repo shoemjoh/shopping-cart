@@ -63,14 +63,18 @@ def to_usd(my_price):
 
 # INFO Capture / Inputs
 # this is a string version of the input
-selected_id = input("Please input a product identifier: ")
 
-for i in products:
-    if selected_id == str(i["id"]):
-        matching_prods = i
-        # print(matching_prods)
-        print("Selected Product: " +
-              matching_prods["name"] + " " + to_usd(matching_prods["price"]))
+while True:
+    selected_id = input("Please input a product identifier: ")
+    if selected_id == "Done":
+        break
+    else:
+        for i in products:
+            if selected_id == str(i["id"]):
+                matching_prods = i
+                # print(matching_prods)
+                print("Selected Product: " +
+                      matching_prods["name"] + " " + to_usd(matching_prods["price"]))
 
 
 # print(selected_id)
