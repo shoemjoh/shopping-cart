@@ -64,8 +64,15 @@ def to_usd(my_price):
 # INFO Capture / Inputs
 # this is a string version of the input
 selected_id = input("Please input a product identifier: ")
-print(selected_id)
-print(type(selected_id))
+
+for i in products:
+    if selected_id == str(i["id"]):
+        matching_prod = i["name"]
+        print(matching_prod)
+
+
+# print(selected_id)
+# print(type(selected_id))
 
 # A grocery store name of your choice
 # A grocery store phone number and/or website URL and/or address of choice
