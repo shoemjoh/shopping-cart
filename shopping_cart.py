@@ -64,6 +64,7 @@ def to_usd(my_price):
 # INFO Capture / Inputs
 # this is a string version of the input
 total_price = 0
+selected_ids = []
 
 while True:
     selected_id = input("Please input a product identifier: ")
@@ -74,10 +75,21 @@ while True:
             if selected_id == str(i["id"]):
                 matching_prods = i
                 total_price = total_price + matching_prods["price"]
+                selected_ids.append(matching_prods)
                 # print(matching_prods)
-                print("Selected Product: " +
-                      matching_prods["name"] + " " + to_usd(matching_prods["price"]))
+                # print("Selected Product: " +
+                # matching_prods["name"] + " " + to_usd(matching_prods["price"]))
+# print(selected_ids)
+print("Your receipt:")
+for x in selected_ids:
+    for p in products:
+        if str(p["id"]) == str(x["id"]):
+            matching_prods = p
+            print("Selected Product: " +
+                  matching_prods["name"] + " " + to_usd(matching_prods["price"]))
+
 print("Total Price of Items: " + to_usd(total_price))
+
 
 # print(selected_id)
 # print(type(selected_id))
