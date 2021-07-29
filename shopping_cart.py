@@ -1,5 +1,6 @@
 # shopping_cart.py
 
+import datetime
 products = [
     {"id": 1, "name": "Chocolate Sandwich Cookies",
         "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -70,6 +71,8 @@ while True:
     selected_id = input("Please input a product identifier: ")
     if selected_id == "Done":
         break
+    elif selected_id not in "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20":
+        print("Sorry! It doesn't look like you gave a valid identifier!")
     else:
         for i in products:
             if selected_id == str(i["id"]):
@@ -80,7 +83,11 @@ while True:
                 # print("Selected Product: " +
                 # matching_prods["name"] + " " + to_usd(matching_prods["price"]))
 # print(selected_ids)
-print("Your receipt:")
+print("\n")
+print("John's Grocer \n888-888-8888")
+now = datetime.datetime.now()  # found this code on w3resource.com
+print(now.strftime("%Y-%m-%d %H:%M:%S"))
+print("\nYour receipt:")
 for x in selected_ids:
     for p in products:
         if str(p["id"]) == str(x["id"]):
@@ -89,6 +96,7 @@ for x in selected_ids:
                   matching_prods["name"] + " " + to_usd(matching_prods["price"]))
 
 print("Total Price of Items: " + to_usd(total_price))
+print("\n")
 
 
 # print(selected_id)
