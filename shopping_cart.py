@@ -84,9 +84,9 @@ while True:
                 # matching_prods["name"] + " " + to_usd(matching_prods["price"]))
 # print(selected_ids)
 
-# Calculate tax
+# Calculate tax & total
 tax = total_price*.0875
-
+total_owed = tax + total_price
 
 # Create Receipt
 print("\n")
@@ -101,8 +101,10 @@ for x in selected_ids:
             print("Selected Product: " +
                   matching_prods["name"] + " " + to_usd(matching_prods["price"]))
 
-print("Total Price of Items: " + to_usd(total_price))
-print("Tax owed: " + to_usd(tax))
+print("Sum of Items: " + to_usd(total_price))
+print("Tax : " + to_usd(tax))
+print("Total : " + to_usd(total_owed))
+print("Thank you for shopping at John's Grocers!")
 print("\n")
 
 
