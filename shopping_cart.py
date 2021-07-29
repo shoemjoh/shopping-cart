@@ -83,6 +83,12 @@ while True:
                 # print("Selected Product: " +
                 # matching_prods["name"] + " " + to_usd(matching_prods["price"]))
 # print(selected_ids)
+
+# Calculate tax
+tax = total_price*.0875
+
+
+# Create Receipt
 print("\n")
 print("John's Grocer \n888-888-8888")
 now = datetime.datetime.now()  # found this code on w3resource.com
@@ -96,6 +102,7 @@ for x in selected_ids:
                   matching_prods["name"] + " " + to_usd(matching_prods["price"]))
 
 print("Total Price of Items: " + to_usd(total_price))
+print("Tax owed: " + to_usd(tax))
 print("\n")
 
 
