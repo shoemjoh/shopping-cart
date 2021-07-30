@@ -1,6 +1,11 @@
 # shopping_cart.py
 
+import os
 import datetime
+
+from dotenv import load_dotenv
+
+
 products = [
     {"id": 1, "name": "Chocolate Sandwich Cookies",
         "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -60,6 +65,10 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
+load_dotenv()
+tax_r = os.getenv("tax_rate")
+print(tax_r)
+
 # print(products)
 
 # INFO Capture / Inputs
@@ -85,7 +94,7 @@ while True:
 # print(selected_ids)
 
 # Calculate tax & total
-tax = total_price*.0875
+tax = total_price*float(tax_r)
 total_owed = tax + total_price
 
 # Create Receipt
