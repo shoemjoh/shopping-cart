@@ -67,7 +67,7 @@ def to_usd(my_price):
 
 load_dotenv()
 tax_r = os.getenv("tax_rate")
-print(tax_r)
+# print(tax_r)
 
 # print(products)
 
